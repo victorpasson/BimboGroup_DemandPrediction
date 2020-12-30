@@ -318,7 +318,7 @@ body {
 }
 </style>
 
-<style type="text/css">body{font-family: Gotham;font-size: 14pt;}h1,h2,h3,h4,h5,h6{font-size: 20pt;}</style>
+<style type="text/css">body{font-family: Gotham;font-size: 14pt;}h1,h3,h4,h6{font-size: 20pt;}h2{font-size: 14pt; text-align: right;}h5{font-size: 16pt}</style>
 
 
 
@@ -428,8 +428,8 @@ summary {
 
 <a href="http://victorpasson.github.io/" target="_self" rel="prev">Voltar</a>
 <h1 class="title toc-ignore">Prevendo Demanda de Estoque Baseado em Vendas - Grupo Bimbo</h1>
-<h4 class="author">João Victor Vieira Passon - <span class="citation">@victorpasson</span></h4>
-<h4 class="date">27 de Dezembro de 2020</h4>
+<h2 class="author">João Victor Vieira Passon - <span class="citation">@victorpasson</span></h2>
+<h2 class="date">27 de Dezembro de 2020</h2>
 
 </div>
 
@@ -443,7 +443,7 @@ summary {
 <p>Para a construção desse projeto utilizaremos a Linguagem R.</p>
 <p>Link para mais informações: <a href="https://www.kaggle.com/c/grupo-bimbo-inventory-demand" class="uri">https://www.kaggle.com/c/grupo-bimbo-inventory-demand</a></p>
 <div id="conjunto-de-dados" class="section level4">
-<h4><strong>Conjunto de Dados</strong></h4>
+<h5><strong>Conjunto de Dados</strong></h5>
 <p>O Dataset disponibilizado pela empresa consiste em 7 semanas de vendas no México. Toda semana, existem caminhões de entregas que entregam produtos às lojas. E cada transação dessa consiste em vendas e retornos. Os retornos são produtos que não foram vendidos ou expiraram. A demanda por um produto em certa semana é definida como a venda dessa semana subtraída pelo retorno da próxima semana.</p>
 <p>Foram apresentados dois datasets: treino e teste. Cada um dividido com base no tempo.</p>
 <p>É importante ressaltar que há produtos no dataset de teste que não existem no dataset de treino. Isso é um comportamento esperado em dados de estoque, pois existem novos produtos sendo vendidos a todo momento. Portanto, nosso modelo deve ser capaz de lidar com valores faltantes.</p>
@@ -485,7 +485,7 @@ summary {
 <p>Como visto acima, o dataset de treino tem 7 semanas de documentação. Possuindo 552 registros únicos na variável Agencia_ID, ou seja, 552 depósitos de vendas diferentes. 9 possíveis canais de vendas. 3.603 rotas de entregas disponíveis. Uma enorme quantidades de clientes. E, por fim, verifica-se mais de 1000 produtos ofertados.</p>
 <p>É importante ressaltar que, em relação aos clientes, verificamos 880.604 IDs diferentes. Isso não significa possuir 880.604 clientes únicos, pois, como documentado pela própria empresa, há clientes com IDs duplicados.</p>
 <div id="gráficos" class="section level4">
-<h4><strong>Gráficos:</strong></h4>
+<h5><strong>Gráficos:</strong></h5>
 <pre class="r"><code>train %&gt;% 
   group_by(Semana) %&gt;% 
   summarise(total = sum(Demanda_uni_equil)) %&gt;% 
