@@ -10,7 +10,7 @@
 # https://drive.google.com/drive/folders/1jwaQ2Ih696KMEimQOxksaAdqUxZQVxzo?usp=sharing
 
 ## Setando o diretório de trabalho
-setwd("C:/Users/victor/Desktop/FDC/BDARMA/XVIII.Projetos-com-Feedback/02-Prevendo-Demanda-Estoque/")
+setwd("C:/Users/victor/Desktop/FDC/BDARMA/XVIII.Projetos-com-Feedback/02.Prevendo-Demanda-Estoque/BimboGroup_DemandPrediction/")
 getwd()
 
 library(tidyverse)
@@ -304,11 +304,9 @@ sum(previsoes < 0)
 
 actual <- expm1(Y)
 
-rss <- sum((previsoes - actual) ^ 2)
-tss <- sum((actual - mean(actual)) ^ 2)
-rsq <- 1 - (rss/tss)
-rsq
-
+error <- actual - previsoes
+mse <- mean(error^2)
+R2 = 1 - (sum(error^2)/sum((actual - mean(actual))^2))
 ## Prevendo no dataset oficial
 test <- read_csv("test2.csv", col_types = cols("i","i", "i", "i", "i", "i", "i", "i", "i", "i",
                                                 "d", "d","d", "d"))
